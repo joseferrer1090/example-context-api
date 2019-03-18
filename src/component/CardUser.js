@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import PropType from "prop-types";
 import IMG from "./../assets/img/descarga.svg";
+import ModalView from "./ModalView";
 
 class CardUser extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      modal: false
+    };
   }
+
+  openModal = () => {
+    this.refs.child.toggle();
+  };
+
   render() {
     return (
       <div>
@@ -27,7 +35,7 @@ class CardUser extends Component {
                         href=""
                         onClick={e => {
                           e.preventDefault();
-                          alert("Probando");
+                          this.openModal();
                         }}
                         style={{ cursor: "pointer !important", color: "blue" }}
                       >
@@ -50,6 +58,7 @@ class CardUser extends Component {
             </div>
           </div>
         </div>
+        <ModalView modalview={this.state.modal} ref={"child"} />
       </div>
     );
   }

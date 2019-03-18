@@ -6,8 +6,7 @@ class ModalView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: this.props.modalview,
-      id: this.props.id
+      modal: this.props.modalview
     };
   }
 
@@ -19,7 +18,7 @@ class ModalView extends Component {
 
   render() {
     return (
-      <Modal isOpen={this.state.modal}>
+      <Modal className="modal-lg" isOpen={this.state.modal}>
         <ModalHeader> Modal </ModalHeader>
         <ModalBody>
           <div>
@@ -29,7 +28,7 @@ class ModalView extends Component {
         <ModalFooter>
           <button
             type="button"
-            className="btn btn-secondary-outline"
+            className="btn btn-outline-secondary btn-sm"
             onClick={() => {
               this.setState({
                 modal: false
@@ -45,8 +44,7 @@ class ModalView extends Component {
 }
 
 ModalView.propTypes = {
-  modalview: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired
+  modalview: PropTypes.bool.isRequired
 };
 
 export default ModalView;
