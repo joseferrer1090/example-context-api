@@ -14,7 +14,30 @@ class CardUser extends Component {
           <div className="card mb-4 box-shadow">
             <img className="card-img-top" src={IMG} alt="Card image cap" />
             <div className="card-body">
-              <h4 className="card-title text-center">{this.props.username}</h4>
+              <div>
+                {" "}
+                <h4 className="card-title text-center">
+                  {" "}
+                  {this.props.username}{" "}
+                  <span className="text-center mt-0">
+                    {" "}
+                    <small style={{ fontSize: "12px" }}>
+                      {" "}
+                      <a
+                        href=""
+                        onClick={e => {
+                          e.preventDefault();
+                          alert("Probando");
+                        }}
+                        style={{ cursor: "pointer !important", color: "blue" }}
+                      >
+                        {" "}
+                        ver mas
+                      </a>{" "}
+                    </small>
+                  </span>
+                </h4>
+              </div>
               <p class="card-text" style={{ fontSize: "16px" }}>
                 <small class="text-muted">Nombre:</small> {this.props.name}
               </p>

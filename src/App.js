@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Context from "./config/Context";
 import ContextProvider from "./provider/ContextProvider";
 import User from "./component/CardUser";
+import ModalView from "./component/ModalView";
 import "./App.css";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className="">
