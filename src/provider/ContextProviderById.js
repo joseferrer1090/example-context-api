@@ -1,24 +1,26 @@
 import React, { Component } from "react";
-import Context from "./../provider/ContextProvider";
+import Context from "./../config/Context";
 
 class ProviderById extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: []
+      user: ""
     };
   }
 
   getUserById = id => {
-    console.log(id);
+    console.log("peticion al api");
   };
+
+  componentWillMount() {
+    this.getUserById();
+  }
 
   render() {
     return (
-      <Context.Provider>
-        <div>
-          <p>Probando</p>
-        </div>
+      <Context.Provider value={{ user: this.state.user }}>
+        {this.props.children}
       </Context.Provider>
     );
   }

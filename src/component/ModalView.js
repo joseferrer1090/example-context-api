@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ContextbyId from "./../config/Context";
+import Context from "./../config/Context";
 import ContextProviderById from "./../provider/ContextProviderById";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
@@ -24,9 +24,13 @@ class ModalView extends Component {
         <ModalHeader> Modal </ModalHeader>
         <ModalBody>
           <ContextProviderById>
-            <ContextbyId.Consumer>
-              <div>{data => <div>probando </div>}</div>
-            </ContextbyId.Consumer>
+            <Context.Consumer>
+              {data => (
+                <div>
+                  <p>Apenas viendo</p>
+                </div>
+              )}
+            </Context.Consumer>
           </ContextProviderById>
         </ModalBody>
         <ModalFooter>
@@ -52,3 +56,9 @@ ModalView.propTypes = {
 };
 
 export default ModalView;
+
+{
+  /* <div>
+            <p>Probando aqui va la data</p>
+          </div> */
+}
