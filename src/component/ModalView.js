@@ -23,15 +23,7 @@ class ModalView extends Component {
       <Modal className="modal-lg" isOpen={this.state.modal}>
         <ModalHeader> Modal </ModalHeader>
         <ModalBody>
-          <ContextProviderById>
-            <Context.Consumer>
-              {data => (
-                <div>
-                  <p>Apenas viendo</p>
-                </div>
-              )}
-            </Context.Consumer>
-          </ContextProviderById>
+          <p>Probando</p>
         </ModalBody>
         <ModalFooter>
           <button
@@ -56,6 +48,18 @@ ModalView.propTypes = {
 };
 
 export default ModalView;
+
+{
+  /* <ContextProviderById>
+            <Context.Consumer>
+              {data => (
+                <div>
+                  <p>Apenas viendo</p>
+                </div>
+              )}
+            </Context.Consumer>
+          </ContextProviderById> */
+}
 
 {
   /* <div>
