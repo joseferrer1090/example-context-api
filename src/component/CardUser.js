@@ -46,14 +46,15 @@ class CardUser extends Component {
                   </span>
                 </h4>
               </div>
-              <p class="card-text" style={{ fontSize: "16px" }}>
-                <small class="text-muted">Nombre:</small> {this.props.name}
+              <p className="card-text" style={{ fontSize: "16px" }}>
+                <small className="text-muted">Nombre:</small> {this.props.name}
               </p>
-              <p class="card-text" style={{ fontSize: "16px" }}>
-                <small class="text-muted">Email:</small> {this.props.email}
+              <p className="card-text" style={{ fontSize: "16px" }}>
+                <small className="text-muted">Email:</small> {this.props.email}
               </p>
-              <p class="card-text" style={{ fontSize: "16px" }}>
-                <small class="text-muted">Telefono:</small> {this.props.phone}
+              <p className="card-text" style={{ fontSize: "16px" }}>
+                <small className="text-muted">Telefono:</small>{" "}
+                {this.props.phone}
               </p>
             </div>
           </div>

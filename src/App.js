@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Context from "./config/Context";
 import ContextProvider from "./provider/ContextProvider";
 import User from "./component/CardUser";
-import ModalView from "./component/ModalView";
 import "./App.css";
 
 class App extends Component {
@@ -50,9 +49,8 @@ class App extends Component {
                       <div className="row">
                         {data.users.map((aux, i) => {
                           return (
-                            <div className="col-md-4">
+                            <div key={i} className="col-md-4">
                               <User
-                                key={i}
                                 name={aux.name}
                                 username={aux.username}
                                 email={aux.email}
