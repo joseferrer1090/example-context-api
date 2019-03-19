@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Context from "./../config/Context";
+import ContextProvider from "./../provider/ContextProvider";
 import ContextProviderById from "./../provider/ContextProviderById";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { userInfo } from "os";
 
 class ModalView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: this.props.modalview
+      modal: this.props.modalview,
+      data: []
     };
   }
 

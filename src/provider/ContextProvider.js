@@ -21,7 +21,7 @@ class ContextProvider extends Component {
       .catch(error => console.warn(error));
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.grabDataFromApi();
   }
 

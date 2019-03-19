@@ -5,13 +5,13 @@ class ProviderById extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: "",
+      user: [],
       id: this.props.id
     };
   }
 
   getDataUser = id => {
-    fetch("https://jsonplaceholder.typicode.com/users/" + id)
+    fetch("https://jsonplaceholder.typicode.com/users/" + this.state.id)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -21,9 +21,9 @@ class ProviderById extends Component {
       })
       .catch(error => console.log(error));
   };
+
   componentWillMount() {
-    console.log("esta es la peticion");
-    this.getDataUser(this.state.id);
+    console.log("Probando apenas" + this.state.id);
   }
 
   render() {

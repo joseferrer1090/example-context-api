@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Context from "./config/Context";
-import ContextProvider from "./provider/ContextProvider";
-import User from "./component/CardUser";
+import Context from "./config/Context"; // Este es mi contexto
+import ContextProvider from "./provider/ContextProvider"; // Este es mi provedor de datos "Provider"
+import User from "./component/CardUser"; // Esta es la tarjeta que se rendizara
 import "./App.css";
 
 class App extends Component {
@@ -44,6 +44,7 @@ class App extends Component {
             <div className="container">
               <div className="row">
                 <ContextProvider>
+                  {/* En esta linea llamo a mi provedor de datos el cual tiene una petion a un api */}
                   <Context.Consumer>
                     {data => (
                       <div className="row">
