@@ -7,7 +7,7 @@ class ModalView extends Component {
     super(props);
     this.state = {
       modal: this.props.modalview,
-      data: [],
+      data: "",
       id: this.props.iduser
     };
   }
@@ -40,6 +40,7 @@ class ModalView extends Component {
   render() {
     // console.log(this.state.id);
     const auxData = this.state.data;
+    console.log(auxData.address);
     return (
       <Modal className="modal-lg" isOpen={this.state.modal}>
         <ModalHeader> Modal </ModalHeader>
