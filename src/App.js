@@ -52,6 +52,7 @@ class App extends Component {
                           return (
                             <div key={i} className="col-md-4">
                               <User
+                                id={aux.id}
                                 name={aux.name}
                                 username={aux.username}
                                 email={aux.email}

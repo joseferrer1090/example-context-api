@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Context from "./../config/Context";
-import ContextProvider from "./../provider/ContextProvider";
-import ContextProviderById from "./../provider/ContextProviderById";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { userInfo } from "os";
 
 class ModalView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: this.props.modalview,
-      data: []
+      data: [],
+      id: this.props.iduser
     };
   }
 
@@ -21,12 +18,33 @@ class ModalView extends Component {
     }));
   };
 
+  getDataUserById = id => {
+    fetch("https://jsonplaceholder.typicode.com/users/" + id)
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        this.setState({
+          data: result
+        });
+      })
+      .catch(err => {
+        console.log("Error", err);
+      });
+  };
+
+  componentDidMount() {
+    const id = this.state.id;
+    this.getDataUserById(id);
+  }
+
   render() {
+    // console.log(this.state.id);
+    const auxData = this.state.data;
     return (
       <Modal className="modal-lg" isOpen={this.state.modal}>
         <ModalHeader> Modal </ModalHeader>
         <ModalBody>
-          <p>Probando</p>
+          <p>{auxData.username}</p>
         </ModalBody>
         <ModalFooter>
           <button
@@ -47,7 +65,8 @@ class ModalView extends Component {
 }
 
 ModalView.propTypes = {
-  modalview: PropTypes.bool.isRequired
+  modalview: PropTypes.bool.isRequired,
+  iduser: PropTypes.number.isRequired
 };
 
 export default ModalView;

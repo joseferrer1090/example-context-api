@@ -22,6 +22,7 @@ class CardUser extends Component {
           <div className="card mb-4 box-shadow">
             <img className="card-img-top" src={IMG} alt="Card image cap" />
             <div className="card-body">
+              <input type="hidden" value={this.props.id} />
               <div>
                 {" "}
                 <h4 className="card-title text-center">
@@ -59,7 +60,11 @@ class CardUser extends Component {
             </div>
           </div>
         </div>
-        <ModalView modalview={this.state.modal} ref={"child"} />
+        <ModalView
+          iduser={this.props.id}
+          modalview={this.state.modal}
+          ref={"child"}
+        />
       </div>
     );
   }
@@ -69,7 +74,8 @@ CardUser.propType = {
   name: PropType.string.isRequired,
   username: PropType.string.isRequired,
   eamil: PropType.string.isRequired,
-  phone: PropType.string.isRequired
+  phone: PropType.string.isRequired,
+  id: PropType.number.isRequired
 };
 
 export default CardUser;
