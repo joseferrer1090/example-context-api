@@ -22,7 +22,7 @@ class ModalView extends Component {
     fetch("https://jsonplaceholder.typicode.com/users/" + id)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        // console.log(result);
         this.setState({
           data: result
         });
@@ -44,7 +44,56 @@ class ModalView extends Component {
       <Modal className="modal-lg" isOpen={this.state.modal}>
         <ModalHeader> Modal </ModalHeader>
         <ModalBody>
-          <p>{auxData.username}</p>
+          <div className="row">
+            <div className="col-md-3">
+              <img
+                src="https://via.placeholder.com/150"
+                className="img-thumbnail"
+              />
+            </div>
+            <div className="col-md-9">
+              <table className="table table-hover table-striped">
+                <tbody>
+                  <tr>
+                    <td>Identificacion</td>
+                    <td>{auxData.id}</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre</td>
+                    <td>{auxData.name}</td>
+                  </tr>
+                  <tr>
+                    <td>username</td>
+                    <td>{auxData.username}</td>
+                  </tr>
+                  <tr>
+                    <td>email</td>
+                    <td>{auxData.email}</td>
+                  </tr>
+                  <tr>
+                    <td>Direccion</td>
+                    <td>Datos de la direccion</td>
+                  </tr>
+                  <tr>
+                    <td>Telefono</td>
+                    <td>{auxData.phone}</td>
+                  </tr>
+                  <tr>
+                    <td>website</td>
+                    <td>
+                      <a href={`http://${auxData.website}/`} target={"_blank"}>
+                        {auxData.website}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Empresa</td>
+                    <td>Datos de la empresa</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </ModalBody>
         <ModalFooter>
           <button
@@ -70,21 +119,3 @@ ModalView.propTypes = {
 };
 
 export default ModalView;
-
-{
-  /* <ContextProviderById>
-            <Context.Consumer>
-              {data => (
-                <div>
-                  <p>Apenas viendo</p>
-                </div>
-              )}
-            </Context.Consumer>
-          </ContextProviderById> */
-}
-
-{
-  /* <div>
-            <p>Probando aqui va la data</p>
-          </div> */
-}

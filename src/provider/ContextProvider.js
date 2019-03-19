@@ -13,7 +13,7 @@ class ContextProvider extends Component {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         this.setState({
           users: data
         });
